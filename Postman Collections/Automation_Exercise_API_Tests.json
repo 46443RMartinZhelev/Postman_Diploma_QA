@@ -215,6 +215,10 @@
 		{
 			"key": "SiteAPI",
 			"value": ""
+		},
+		{
+			"key": "productVariable",
+			"value": "tops"
 		}
 	]
 }
