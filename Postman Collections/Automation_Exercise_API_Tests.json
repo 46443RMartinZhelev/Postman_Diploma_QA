@@ -7,6 +7,19 @@
 	"item": [
 		{
 			"name": "Get All Products List",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+						"exec": [
+							"pm.collectionVariables.set(\"SiteAPI\", \"https://automationexercise.com/api\")"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "ffa8dba5-83fb-4287-8461-37e50a2d2bb4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -43,6 +56,12 @@
 					"});"
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SiteAPI",
+			"value": ""
 		}
 	]
 }
