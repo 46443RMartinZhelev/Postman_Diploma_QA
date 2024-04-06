@@ -47,9 +47,54 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": "{{SiteAPI}}/productsList"
+						"url": "{{SiteAPI}}/verifyLogin"
+					},
+					"response": []
+				},
+				{
+					"name": "POST To Verify Login without email parameter",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Internal status OK\", function(){\r",
+									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Products returned\", function(){\r",
+									"    pm.expect(jsonData.products).to.not.be.empty;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "7ea159f1-5d05-4671-b036-0359036c202b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{SiteAPI}}/verifyLogin"
 					},
 					"response": []
 				}
@@ -57,7 +102,7 @@
 			"id": "878f5195-12be-4ae0-abfd-187cf5dac58f"
 		},
 		{
-			"name": "Get All Products List",
+			"name": "1 Get All Products List",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -102,7 +147,7 @@
 			"response": []
 		},
 		{
-			"name": "POST To All Products List",
+			"name": "2 POST To All Products List",
 			"event": [
 				{
 					"listen": "test",
@@ -136,7 +181,7 @@
 			"response": []
 		},
 		{
-			"name": "Get All Brands List",
+			"name": "3 Get All Brands List",
 			"id": "4f5926c9-dce0-4be5-8345-2b5575ab3e94",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -149,7 +194,7 @@
 			"response": []
 		},
 		{
-			"name": "PUT To All Brands List",
+			"name": "4 PUT To All Brands List",
 			"event": [
 				{
 					"listen": "test",
@@ -183,7 +228,7 @@
 			"response": []
 		},
 		{
-			"name": "POST To Search Product",
+			"name": "5 POST To Search Product",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -247,7 +292,7 @@
 			"response": []
 		},
 		{
-			"name": "POST To Search Product without search_product parameter",
+			"name": "6 POST To Search Product without search_product parameter",
 			"event": [
 				{
 					"listen": "test",
