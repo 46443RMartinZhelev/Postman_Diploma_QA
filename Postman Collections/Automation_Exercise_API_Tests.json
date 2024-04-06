@@ -51,6 +51,25 @@
 		},
 		{
 			"name": "POST To All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ddaf196-64be-4ec6-ace2-6596b0ee302b",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Method not supported\", function(){\r",
+							"    pm.expect(pm.response.status).to.eql(405);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "48f38787-4593-46e1-9cb8-c85294e0cc59",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
