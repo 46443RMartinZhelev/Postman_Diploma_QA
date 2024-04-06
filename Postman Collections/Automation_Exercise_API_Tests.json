@@ -59,11 +59,13 @@
 						"exec": [
 							"let jsonData = pm.response.json();\r",
 							"\r",
-							"pm.test(\"Method not supported\", function(){\r",
-							"    pm.expect(pm.response.status).to.eql(405);\r",
+							"pm.test(\"Internal status Method not Supported\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
 							"});\r",
 							"\r",
-							""
+							"pm.test(\"Status message correct\", function(){\r",
+							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
+							"})"
 						],
 						"type": "text/javascript",
 						"packages": {}
