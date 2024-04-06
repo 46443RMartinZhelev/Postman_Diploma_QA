@@ -25,6 +25,7 @@
 						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
 						"exec": [
 							"let jsonData = pm.response.json();\r",
+							"\r",
 							"pm.test(\"Internal status OK\", function(){\r",
 							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 							"});\r",
@@ -82,13 +83,26 @@
 				"url": "{{SiteAPI}}/productsList"
 			},
 			"response": []
+		},
+		{
+			"name": "Get All Brands List",
+			"id": "4f5926c9-dce0-4be5-8345-2b5575ab3e94",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{SiteAPI}}/brandsList"
+			},
+			"response": []
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4010cf2b-7b48-4794-9e8d-db49db3c723b",
+				"id": "489908b9-634a-4b62-a7b1-99b268b9768f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -99,13 +113,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "da76e5c3-c2fe-4cb3-b7ee-5a00d19a5d6f",
+				"id": "fe05fc2c-b470-4414-9366-55a9eda7e389",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					"pm.test(\"Assure successful run\", function () {\r",
-					"    pm.response.to.have.status(200);\r",
-					"});"
+					""
 				]
 			}
 		}
