@@ -194,6 +194,40 @@
 				"url": "{{SiteAPI}}/searchProduct"
 			},
 			"response": []
+		},
+		{
+			"name": "PUT To All Brands List Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ddaf196-64be-4ec6-ace2-6596b0ee302b",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status Method not Supported\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status message correct\", function(){\r",
+							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "3057cffe-9a2f-4ec5-83da-82b331962388",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "{{SiteAPI}}/brandsList"
+			},
+			"response": []
 		}
 	],
 	"event": [
