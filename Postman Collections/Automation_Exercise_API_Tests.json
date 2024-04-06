@@ -227,9 +227,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "DELETE",
+						"method": "POST",
 						"header": [],
-						"url": "{{SiteAPI}}/verifyLogin"
+						"url": "{{SiteAPI}}/createAccount"
 					},
 					"response": []
 				},
@@ -274,7 +274,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{SiteAPI}}/verifyLogin"
+						"url": "{{SiteAPI}}/deleteAccount"
 					},
 					"response": []
 				},
@@ -317,9 +317,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [],
-						"url": "{{SiteAPI}}/verifyLogin"
+						"url": "{{SiteAPI}}/updateAccount"
 					},
 					"response": []
 				},
@@ -362,9 +362,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
-						"url": "{{SiteAPI}}/verifyLogin"
+						"url": "{{SiteAPI}}/getUserDetailByEmail"
 					},
 					"response": []
 				}
