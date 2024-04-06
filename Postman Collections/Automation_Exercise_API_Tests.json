@@ -172,6 +172,21 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_product",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "jean",
+							"type": "text"
+						}
+					]
+				},
 				"url": "{{SiteAPI}}/searchProduct"
 			},
 			"response": []
