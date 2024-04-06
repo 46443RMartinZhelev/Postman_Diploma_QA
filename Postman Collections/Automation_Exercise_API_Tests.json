@@ -139,7 +139,9 @@
 					"script": {
 						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
 						"exec": [
-							""
+							"let products = [\"Tops\", \"Tshirts\", \"Dress\", \"Jeans\"]\r",
+							"\r",
+							"pm.collectionVariables.set(\"productVariable\", products[(Math.floor(Math.random() * products.length))])"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -177,7 +179,7 @@
 					"formdata": [
 						{
 							"key": "search_product",
-							"value": "",
+							"value": "{{productVariable}}",
 							"type": "text"
 						}
 					]
