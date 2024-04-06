@@ -196,7 +196,7 @@
 			"response": []
 		},
 		{
-			"name": "PUT To All Brands List Copy",
+			"name": "POST To Search Product without search_product parameter",
 			"event": [
 				{
 					"listen": "test",
@@ -206,11 +206,11 @@
 							"let jsonData = pm.response.json();\r",
 							"\r",
 							"pm.test(\"Internal status Method not Supported\", function(){\r",
-							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
+							"    pm.expect(jsonData.responseCode).to.eql(400);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Status message correct\", function(){\r",
-							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
+							"    pm.expect(jsonData.message).to.eql(\"Bad request, search_product parameter is missing in POST request.\");\r",
 							"})"
 						],
 						"type": "text/javascript",
@@ -223,9 +223,9 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
-				"url": "{{SiteAPI}}/brandsList"
+				"url": "{{SiteAPI}}/searchProduct"
 			},
 			"response": []
 		}
