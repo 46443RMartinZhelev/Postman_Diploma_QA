@@ -96,6 +96,40 @@
 				"url": "{{SiteAPI}}/brandsList"
 			},
 			"response": []
+		},
+		{
+			"name": "PUT To All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ddaf196-64be-4ec6-ace2-6596b0ee302b",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status Method not Supported\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status message correct\", function(){\r",
+							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "9dfb7342-3dca-4350-8ba5-755c0b86a4ff",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{SiteAPI}}/brandsList"
+			},
+			"response": []
 		}
 	],
 	"event": [
