@@ -9,7 +9,7 @@
 			"name": "To implement",
 			"item": [
 				{
-					"name": "POST To Verify Login with valid details",
+					"name": "7 POST To Verify Login with valid details",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -54,7 +54,7 @@
 					"response": []
 				},
 				{
-					"name": "POST To Verify Login without email parameter",
+					"name": "8 POST To Verify Login without email parameter",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -93,6 +93,276 @@
 					},
 					"request": {
 						"method": "POST",
+						"header": [],
+						"url": "{{SiteAPI}}/verifyLogin"
+					},
+					"response": []
+				},
+				{
+					"name": "9 DELETE To Verify Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Internal status OK\", function(){\r",
+									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Products returned\", function(){\r",
+									"    pm.expect(jsonData.products).to.not.be.empty;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "4320bbd1-fd10-46d8-8148-a37cc5aaafe2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{SiteAPI}}/verifyLogin"
+					},
+					"response": []
+				},
+				{
+					"name": "9 DELETE To Verify Login Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Internal status OK\", function(){\r",
+									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Products returned\", function(){\r",
+									"    pm.expect(jsonData.products).to.not.be.empty;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "2e5426a3-5bdd-4c87-b319-7e3288fed532",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{SiteAPI}}/verifyLogin"
+					},
+					"response": []
+				},
+				{
+					"name": "9 DELETE To Verify Login Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Internal status OK\", function(){\r",
+									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Products returned\", function(){\r",
+									"    pm.expect(jsonData.products).to.not.be.empty;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c3446009-dbf1-4962-ac26-4fbae8679913",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{SiteAPI}}/verifyLogin"
+					},
+					"response": []
+				},
+				{
+					"name": "9 DELETE To Verify Login Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Internal status OK\", function(){\r",
+									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Products returned\", function(){\r",
+									"    pm.expect(jsonData.products).to.not.be.empty;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "8eb7b84f-df5c-4bd6-8040-a165f885bf03",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{SiteAPI}}/verifyLogin"
+					},
+					"response": []
+				},
+				{
+					"name": "9 DELETE To Verify Login Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Internal status OK\", function(){\r",
+									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Products returned\", function(){\r",
+									"    pm.expect(jsonData.products).to.not.be.empty;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "98e4919a-ad38-4b7b-b3ae-b148c44f28ef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{SiteAPI}}/verifyLogin"
+					},
+					"response": []
+				},
+				{
+					"name": "9 DELETE To Verify Login Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Internal status OK\", function(){\r",
+									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Products returned\", function(){\r",
+									"    pm.expect(jsonData.products).to.not.be.empty;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "febb9372-2721-47e4-8ea5-6011c5986d10",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
 						"header": [],
 						"url": "{{SiteAPI}}/verifyLogin"
 					},
