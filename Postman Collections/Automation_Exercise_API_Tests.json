@@ -50,7 +50,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "POST To All Products List",
 			"id": "48f38787-4593-46e1-9cb8-c85294e0cc59",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -58,7 +58,7 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"url": "POST To All Products List"
+				"url": "{{SiteAPI}}/productsList"
 			},
 			"response": []
 		}
