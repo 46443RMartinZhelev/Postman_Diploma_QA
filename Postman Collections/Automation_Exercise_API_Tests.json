@@ -13,7 +13,25 @@
 					"script": {
 						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
 						"exec": [
-							"pm.collectionVariables.set(\"SiteAPI\", \"https://automationexercise.com/api\")"
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Products returned\", function(){\r",
+							"    pm.expect(jsonData.products).to.not.be.empty;\r",
+							"})"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -28,6 +46,19 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{SiteAPI}}/productsList"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "48f38787-4593-46e1-9cb8-c85294e0cc59",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "POST To All Products List"
 			},
 			"response": []
 		}
