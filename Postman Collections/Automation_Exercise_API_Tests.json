@@ -144,7 +144,7 @@
 					"response": []
 				},
 				{
-					"name": "9 DELETE To Verify Login Copy",
+					"name": "10 POST To Verify Login with invalid details",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -182,14 +182,14 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "DELETE",
+						"method": "POST",
 						"header": [],
 						"url": "{{SiteAPI}}/verifyLogin"
 					},
 					"response": []
 				},
 				{
-					"name": "9 DELETE To Verify Login Copy",
+					"name": "11 POST To Create/Register User Account",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -234,7 +234,7 @@
 					"response": []
 				},
 				{
-					"name": "9 DELETE To Verify Login Copy",
+					"name": "12 DELETE METHOD To Delete User Account",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -279,7 +279,7 @@
 					"response": []
 				},
 				{
-					"name": "9 DELETE To Verify Login Copy",
+					"name": "13 PUT METHOD To Update User Account",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -324,7 +324,7 @@
 					"response": []
 				},
 				{
-					"name": "9 DELETE To Verify Login Copy",
+					"name": "14 GET user account detail by email",
 					"event": [
 						{
 							"listen": "prerequest",
