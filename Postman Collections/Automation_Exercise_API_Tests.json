@@ -275,7 +275,7 @@
 							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Products returned\", function(){\r",
+							"pm.test(\"Message correct\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"User exists!\");\r",
 							"})"
 						],
@@ -335,7 +335,7 @@
 							"    pm.expect(jsonData.responseCode).to.eql(400);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Bad request message\", function(){\r",
+							"pm.test(\"Message correct\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"Bad request, email or password parameter is missing in POST request.\");\r",
 							"})"
 						],
@@ -386,11 +386,11 @@
 						"exec": [
 							"let jsonData = pm.response.json();\r",
 							"\r",
-							"pm.test(\"Internal status OK\", function(){\r",
+							"pm.test(\"Internal status Method not supported\", function(){\r",
 							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Request method not supported\", function(){\r",
+							"pm.test(\"Message correct\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
 							"})"
 						],
@@ -431,11 +431,11 @@
 						"exec": [
 							"let jsonData = pm.response.json();\r",
 							"\r",
-							"pm.test(\"Internal status OK\", function(){\r",
+							"pm.test(\"Internal status Not found\", function(){\r",
 							"    pm.expect(jsonData.responseCode).to.eql(404);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"User not found\", function(){\r",
+							"pm.test(\"Message correct\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"User not found!\");\r",
 							"})"
 						],
@@ -507,11 +507,11 @@
 						"exec": [
 							"let jsonData = pm.response.json();\r",
 							"\r",
-							"pm.test(\"Internal status OK\", function(){\r",
+							"pm.test(\"Internal status Created\", function(){\r",
 							"    pm.expect(jsonData.responseCode).to.eql(201);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"User created\", function(){\r",
+							"pm.test(\"Message correct\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"User created!\");\r",
 							"})"
 						],
