@@ -9,51 +9,6 @@
 			"name": "To implement",
 			"item": [
 				{
-					"name": "10 POST To Verify Login with invalid details",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
-								"exec": [
-									"let jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Internal status OK\", function(){\r",
-									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Products returned\", function(){\r",
-									"    pm.expect(jsonData.products).to.not.be.empty;\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "2e5426a3-5bdd-4c87-b319-7e3288fed532",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": "{{SiteAPI}}/verifyLogin"
-					},
-					"response": []
-				},
-				{
 					"name": "12 DELETE METHOD To Delete User Account",
 					"event": [
 						{
@@ -592,6 +547,66 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"url": "{{SiteAPI}}/verifyLogin"
+			},
+			"response": []
+		},
+		{
+			"name": "10 POST To Verify Login with invalid details",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Products returned\", function(){\r",
+							"    pm.expect(jsonData.message).to.eql(\"User not found!\");\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "2e5426a3-5bdd-4c87-b319-7e3288fed532",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "martin.zhelev.not.permanent.should.not.exist",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123y102hed0812dh8012hd",
+							"type": "text"
+						}
+					]
+				},
 				"url": "{{SiteAPI}}/verifyLogin"
 			},
 			"response": []
