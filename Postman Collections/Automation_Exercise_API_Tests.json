@@ -452,6 +452,27 @@
 		},
 		{
 			"name": "3 Get All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b2492f53-57c9-429b-ad72-4c45b29c8313",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Brands returned\", function(){\r",
+							"    pm.expect(jsonData.brands).to.not.be.empty;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "4f5926c9-dce0-4be5-8345-2b5575ab3e94",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
