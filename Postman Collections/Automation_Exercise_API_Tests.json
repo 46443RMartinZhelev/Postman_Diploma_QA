@@ -9,51 +9,6 @@
 			"name": "To implement",
 			"item": [
 				{
-					"name": "8 POST To Verify Login without email parameter",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
-								"exec": [
-									"let jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Internal status OK\", function(){\r",
-									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Products returned\", function(){\r",
-									"    pm.expect(jsonData.products).to.not.be.empty;\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "7ea159f1-5d05-4671-b036-0359036c202b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": "{{SiteAPI}}/verifyLogin"
-					},
-					"response": []
-				},
-				{
 					"name": "9 DELETE To Verify Login",
 					"event": [
 						{
@@ -575,6 +530,61 @@
 							"value": "{{email}}",
 							"type": "text"
 						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{SiteAPI}}/verifyLogin"
+			},
+			"response": []
+		},
+		{
+			"name": "8 POST To Verify Login without email parameter",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Products returned\", function(){\r",
+							"    pm.expect(jsonData.message).to.eql(\"Bad request, email or password parameter is missing in POST request.\");\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "7ea159f1-5d05-4671-b036-0359036c202b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
 						{
 							"key": "password",
 							"value": "{{password}}",
