@@ -647,7 +647,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"User details returned\", function(){\r",
-							"    pm.expect(jsonData.products).to.not.be.empty;\r",
+							"    pm.expect(jsonData.user).to.not.be.empty;\r",
 							"})"
 						],
 						"type": "text/javascript",
@@ -701,7 +701,7 @@
 							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"User updated\", function(){\r",
+							"pm.test(\"Correct message\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"User updated!\");\r",
 							"})"
 						],
@@ -836,8 +836,8 @@
 							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Account deleted\", function(){\r",
-							"    pm.expect(jsonData.products).to.eql(\"Account deleted!\")\r",
+							"pm.test(\"Correct message\", function(){\r",
+							"    pm.expect(jsonData.message).to.eql(\"Account deleted!\")\r",
 							"})"
 						],
 						"type": "text/javascript",
