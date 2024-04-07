@@ -619,7 +619,23 @@
 					"script": {
 						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
 						"exec": [
-							""
+							"pm.environment.set(\"name\", \"martin.zhelev.temporary\")\r",
+							"pm.environment.set(\"email\", \"martin.zhelev.temporary@unibit.bg\")\r",
+							"pm.environment.set(\"password\", \"Test123temporary\")\r",
+							"pm.environment.set(\"title\", \"Mr.\")\r",
+							"pm.environment.set(\"birth_date\", \"8\")\r",
+							"pm.environment.set(\"birth_month\", \"April\")\r",
+							"pm.environment.set(\"birth_year\", \"2001\")\r",
+							"pm.environment.set(\"firstname\", \"Martin\")\r",
+							"pm.environment.set(\"lastname\", \"Zhelev\")\r",
+							"pm.environment.set(\"company\", \"MZ OOD\")\r",
+							"pm.environment.set(\"address1\", \"MZ OOD Str. 1\")\r",
+							"pm.environment.set(\"address2\", \"MZ OOD Str. 2\")\r",
+							"pm.environment.set(\"country\", \"United States\")\r",
+							"pm.environment.set(\"zipcode\", \"1234\")\r",
+							"pm.environment.set(\"state\", \"Oregon\")\r",
+							"pm.environment.set(\"city\", \"Oregon City\")\r",
+							"pm.environment.set(\"mobile_number\", \"971-204-4604\")"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -633,11 +649,11 @@
 							"let jsonData = pm.response.json();\r",
 							"\r",
 							"pm.test(\"Internal status OK\", function(){\r",
-							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"    pm.expect(jsonData.responseCode).to.eql(201);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Products returned\", function(){\r",
-							"    pm.expect(jsonData.products).to.not.be.empty;\r",
+							"    pm.expect(jsonData.message).to.eql(\"User created!\");\r",
 							"})"
 						],
 						"type": "text/javascript",
@@ -653,13 +669,94 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": test,\r\n    \"email\": test,\r\n    \"password\": test,\r\n    \"title\": test,\r\n    \"birth_date\": test,\r\n    \"birth_month\": test,\r\n    \"birth_year\": test,\r\n    \"firstname\": test,\r\n    \"lastname\": test,\r\n    \"company\": test,\r\n    \"address1\": test,\r\n    \"address2:\": test,\r\n    \"country\": test,\r\n    \"zipcode\":,\r\n    \"state\":,\r\n    \"city\":,\r\n    \"mobile_number\":,\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "{{title}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "{{birth_date}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "{{birth_month}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "{{birth_year}}",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "{{firstname}}",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "{{lastname}}",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "{{company}}",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "{{address1}}",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "{{address2}}",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "{{country}}",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "{{zipcode}}",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "{{state}}",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "{{city}}",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "{{mobile_number}}",
+							"type": "text"
 						}
-					}
+					]
 				},
 				"url": "{{SiteAPI}}/createAccount"
 			},
