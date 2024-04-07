@@ -229,6 +229,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": test,\r\n    \"email\": test,\r\n    \"password\": test,\r\n    \"title\": test,\r\n    \"birth_date\": test,\r\n    \"birth_month\": test,\r\n    \"birth_year\": test,\r\n    \"firstname\": test,\r\n    \"lastname\": test,\r\n    \"company\": test,\r\n    \"address1\": test,\r\n    \"address2:\": test,\r\n    \"country\": test,\r\n    \"zipcode\":,\r\n    \"state\":,\r\n    \"city\":,\r\n    \"mobile_number\":,\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{SiteAPI}}/createAccount"
 					},
 					"response": []
