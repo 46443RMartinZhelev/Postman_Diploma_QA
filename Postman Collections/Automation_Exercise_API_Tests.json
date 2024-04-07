@@ -347,12 +347,12 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "{{email}}",
+							"value": "{{email_permanent}}",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "{{password}}",
+							"value": "{{password_permanent}}",
 							"type": "text"
 						}
 					]
@@ -753,7 +753,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Products returned\", function(){\r",
-							"    pm.expect(jsonData.products).to.not.be.empty;\r",
+							"    pm.expect(jsonData.message).to.eql(\"User updated!\");\r",
 							"})"
 						],
 						"type": "text/javascript",
