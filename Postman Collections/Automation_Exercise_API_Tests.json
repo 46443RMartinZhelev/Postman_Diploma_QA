@@ -528,13 +528,94 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": {{name}},\r\n    \"email\": {{email}},\r\n    \"password\": {{password}},\r\n    \"title\": {{title}},\r\n    \"birth_date\": {{birth_date}},\r\n    \"birth_month\": {{birth_month}},\r\n    \"birth_year\": {{birth_year}},\r\n    \"firstname\": {{firstname}},\r\n    \"lastname\": {{lastname}},\r\n    \"company\": {{company}},\r\n    \"address1\": {{address1}},\r\n    \"address2\": {{address2}},\r\n    \"country\": {{country}},\r\n    \"zipcode\": {{zipcode}},\r\n    \"state\": {{state}},\r\n    \"city\": {{city}},\r\n    \"mobile_number\": {{mobile_number}}\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "{{title}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "{{birth_date}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "{{birth_month}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "{{birth_year}}",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "{{firstname}}",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "{{lastname}}",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "{{company}}",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "{{address1}}",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "{{address2}}",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "{{country}}",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "{{zipcode}}",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "{{state}}",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "{{city}}",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "{{mobile_number}}",
+							"type": "text"
 						}
-					}
+					]
 				},
 				"url": "{{SiteAPI}}/createAccount"
 			},
