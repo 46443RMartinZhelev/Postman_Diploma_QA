@@ -759,13 +759,14 @@
 				"method": "GET",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": {{email_permanent}}\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "{{email_permanent}}",
+							"type": "text"
 						}
-					}
+					]
 				},
 				"url": "{{SiteAPI}}/getUserDetailByEmail"
 			},
