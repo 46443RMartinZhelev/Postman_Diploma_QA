@@ -763,7 +763,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "{{email_permanent}}",
+							"value": "martin.zhelev.permanent@unibit.bg",
 							"type": "text"
 						}
 					]
