@@ -646,11 +646,11 @@
 							"responseMessages = [\"userDetails\", \"Bad request, email parameter is missing in GET request.\"]\r",
 							"\r",
 							"pm.test(\"Internal status OK\", function(){\r",
-							"    pm.expect(jsonData.responseCode).to.eql(Math.floor(Math.random()*responseCodes.length));\r",
+							"    pm.expect(jsonData.responseCode).to.eql(responseCodes[Math.floor(Math.random()*responseCodes.length)]);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"User details returned\", function(){\r",
-							"    pm.expect(jsonData.user).to.not.be.empty;\r",
+							"    pm.expect(jsonData.message).to.eql(responseMessages[Math.floor(Math.random()*responseMessages.length)]);\r",
 							"})"
 						],
 						"type": "text/javascript",
