@@ -52,51 +52,6 @@
 						"url": "{{SiteAPI}}/deleteAccount"
 					},
 					"response": []
-				},
-				{
-					"name": "13 PUT METHOD To Update User Account",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
-								"exec": [
-									"let jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Internal status OK\", function(){\r",
-									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Products returned\", function(){\r",
-									"    pm.expect(jsonData.products).to.not.be.empty;\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "98e4919a-ad38-4b7b-b3ae-b148c44f28ef",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": "{{SiteAPI}}/updateAccount"
-					},
-					"response": []
 				}
 			],
 			"id": "878f5195-12be-4ae0-abfd-187cf5dac58f"
@@ -763,12 +718,147 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "{{email_permanent}}",
+							"value": "{{email}}",
 							"type": "text"
 						}
 					]
 				},
 				"url": "{{SiteAPI}}/getUserDetailByEmail"
+			},
+			"response": []
+		},
+		{
+			"name": "13 PUT METHOD To Update User Account",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Products returned\", function(){\r",
+							"    pm.expect(jsonData.products).to.not.be.empty;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "98e4919a-ad38-4b7b-b3ae-b148c44f28ef",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "{{title}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "{{birth_date}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "{{birth_month}}",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "{{birth_year}}",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "{{firstname}}",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "{{lastname}}",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "{{company}}",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "{{address1}}",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "{{address2}}",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "{{country}}",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "{{zipcode}}",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "{{state}}",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "{{city}}",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "{{mobile_number}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{SiteAPI}}/updateAccount"
 			},
 			"response": []
 		}
