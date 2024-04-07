@@ -331,11 +331,11 @@
 						"exec": [
 							"let jsonData = pm.response.json();\r",
 							"\r",
-							"pm.test(\"Internal status OK\", function(){\r",
+							"pm.test(\"Internal status Bad request\", function(){\r",
 							"    pm.expect(jsonData.responseCode).to.eql(400);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Products returned\", function(){\r",
+							"pm.test(\"Bad request message\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"Bad request, email or password parameter is missing in POST request.\");\r",
 							"})"
 						],
@@ -356,7 +356,7 @@
 					"formdata": [
 						{
 							"key": "password",
-							"value": "{{password}}",
+							"value": "{{password_permanent}}",
 							"type": "text"
 						}
 					]
@@ -390,7 +390,7 @@
 							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Products returned\", function(){\r",
+							"pm.test(\"Request method not supported\", function(){\r",
 							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
 							"})"
 						],
