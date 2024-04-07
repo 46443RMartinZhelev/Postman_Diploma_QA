@@ -646,7 +646,7 @@
 							"responseMessages = [\"userDetails\", \"Bad request, email parameter is missing in GET request.\"]\r",
 							"\r",
 							"pm.test(\"Internal status OK\", function(){\r",
-							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"    pm.expect(jsonData.responseCode).to.eql(Math.floor(Math.random()*responseCodes.length));\r",
 							"});\r",
 							"\r",
 							"pm.test(\"User details returned\", function(){\r",
