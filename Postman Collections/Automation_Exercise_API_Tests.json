@@ -97,51 +97,6 @@
 						"url": "{{SiteAPI}}/updateAccount"
 					},
 					"response": []
-				},
-				{
-					"name": "14 GET user account detail by email",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
-								"exec": [
-									"let jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Internal status OK\", function(){\r",
-									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Products returned\", function(){\r",
-									"    pm.expect(jsonData.products).to.not.be.empty;\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "febb9372-2721-47e4-8ea5-6011c5986d10",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{SiteAPI}}/getUserDetailByEmail"
-					},
-					"response": []
 				}
 			],
 			"id": "878f5195-12be-4ae0-abfd-187cf5dac58f"
@@ -759,6 +714,61 @@
 					]
 				},
 				"url": "{{SiteAPI}}/createAccount"
+			},
+			"response": []
+		},
+		{
+			"name": "14 GET user account detail by email",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Products returned\", function(){\r",
+							"    pm.expect(jsonData.products).to.not.be.empty;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "febb9372-2721-47e4-8ea5-6011c5986d10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "{{email_permanent}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{SiteAPI}}/getUserDetailByEmail"
 			},
 			"response": []
 		}
