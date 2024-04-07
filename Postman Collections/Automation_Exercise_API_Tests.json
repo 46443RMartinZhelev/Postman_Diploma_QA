@@ -9,51 +9,6 @@
 			"name": "To implement",
 			"item": [
 				{
-					"name": "7 POST To Verify Login with valid details",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
-								"exec": [
-									"let jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Internal status OK\", function(){\r",
-									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Products returned\", function(){\r",
-									"    pm.expect(jsonData.products).to.not.be.empty;\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "cda2b82f-4607-4c29-9980-14759f35ea2f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": "{{SiteAPI}}/verifyLogin"
-					},
-					"response": []
-				},
-				{
 					"name": "8 POST To Verify Login without email parameter",
 					"event": [
 						{
@@ -185,60 +140,6 @@
 						"method": "POST",
 						"header": [],
 						"url": "{{SiteAPI}}/verifyLogin"
-					},
-					"response": []
-				},
-				{
-					"name": "11 POST To Create/Register User Account",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
-								"exec": [
-									"let jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Internal status OK\", function(){\r",
-									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Products returned\", function(){\r",
-									"    pm.expect(jsonData.products).to.not.be.empty;\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "c3446009-dbf1-4962-ac26-4fbae8679913",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": test,\r\n    \"email\": test,\r\n    \"password\": test,\r\n    \"title\": test,\r\n    \"birth_date\": test,\r\n    \"birth_month\": test,\r\n    \"birth_year\": test,\r\n    \"firstname\": test,\r\n    \"lastname\": test,\r\n    \"company\": test,\r\n    \"address1\": test,\r\n    \"address2:\": test,\r\n    \"country\": test,\r\n    \"zipcode\":,\r\n    \"state\":,\r\n    \"city\":,\r\n    \"mobile_number\":,\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{SiteAPI}}/createAccount"
 					},
 					"response": []
 				},
@@ -622,6 +523,120 @@
 				"method": "POST",
 				"header": [],
 				"url": "{{SiteAPI}}/searchProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "7 POST To Verify Login with valid details",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Products returned\", function(){\r",
+							"    pm.expect(jsonData.message).to.eql(\"User exists!\");\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "cda2b82f-4607-4c29-9980-14759f35ea2f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{SiteAPI}}/verifyLogin"
+			},
+			"response": []
+		},
+		{
+			"name": "11 POST To Create/Register User Account",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eda9fd1-cacd-46af-bb5f-2585b8461533",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eb733b-e3ad-445b-9ca5-a23d0d43e59a",
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Internal status OK\", function(){\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Products returned\", function(){\r",
+							"    pm.expect(jsonData.products).to.not.be.empty;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "c3446009-dbf1-4962-ac26-4fbae8679913",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": test,\r\n    \"email\": test,\r\n    \"password\": test,\r\n    \"title\": test,\r\n    \"birth_date\": test,\r\n    \"birth_month\": test,\r\n    \"birth_year\": test,\r\n    \"firstname\": test,\r\n    \"lastname\": test,\r\n    \"company\": test,\r\n    \"address1\": test,\r\n    \"address2:\": test,\r\n    \"country\": test,\r\n    \"zipcode\":,\r\n    \"state\":,\r\n    \"city\":,\r\n    \"mobile_number\":,\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{SiteAPI}}/createAccount"
 			},
 			"response": []
 		}
