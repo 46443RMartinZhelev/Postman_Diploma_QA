@@ -642,6 +642,9 @@
 						"exec": [
 							"let jsonData = pm.response.json();\r",
 							"\r",
+							"responseCodes = [200, 400]\r",
+							"responseMessages = [\"userDetails\", \"Bad request, email parameter is missing in GET request.\"]\r",
+							"\r",
 							"pm.test(\"Internal status OK\", function(){\r",
 							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 							"});\r",
