@@ -759,14 +759,13 @@
 				"method": "GET",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "email",
-							"value": "martin.zhelev.permanent@unibit.bg",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": {{email_permanent}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": "{{SiteAPI}}/getUserDetailByEmail"
 			},
